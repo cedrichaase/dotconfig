@@ -1,0 +1,3 @@
+[submodule "dotgen"]
+	path = dotgen
+	url = git@github.com:cedrichaase/dotgen.git
