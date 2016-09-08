@@ -44,7 +44,10 @@ function install()
     # don't ignore dotfiles
     shopt -s dotglob
 
-    # install dotfiles
+    # make shell scripts executable
+    find ${DIR_OUTPUT} -name '*.sh' -exec chmod +x {} \;
+
+    # link rendered files to target dir
     cp -rs ${DIR_OUTPUT}/* ${DIR_TARGET}
 
     # install bash plugins
