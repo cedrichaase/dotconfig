@@ -11,9 +11,10 @@ function update()
 {
     git stash
     git submodule update --remote
-    git diff
-    git add .
-    git commit -m "Update submodules"
+    git diff-index --quiet HEAD -- || {
+        git add .
+        git commit -m "Update submodules"
+    }
     git stash pop
 }
 
