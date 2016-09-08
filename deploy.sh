@@ -12,6 +12,12 @@ DIR_PLUG_ZSH=${DIR_PLUGINS}/zsh
 
 DIR_TARGET=${HOME}
 
+function init()
+{
+  git submodule init
+  git submodule update --init
+}
+
 function update()
 {
     git stash
