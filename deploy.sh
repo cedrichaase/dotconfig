@@ -9,7 +9,12 @@ DIR_TARGET=${HOME}
 
 function update()
 {
+    git stash
     git submodule update --remote
+    git diff
+    git add .
+    git commit -m "Update submodules"
+    git stash pop
 }
 
 function build()
