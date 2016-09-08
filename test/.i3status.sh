@@ -1,0 +1,1 @@
+/home/cedric/git/dotconfig/output/.i3status.sh
