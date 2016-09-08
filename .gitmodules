@@ -13,3 +13,6 @@
 [submodule "plugin/vim/vim-pathogen"]
 	path = plugin/vim/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
+[submodule "plugin/bash/z"]
+	path = plugin/bash/z
+	url = https://github.com/rupa/z.git
