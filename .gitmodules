@@ -7,3 +7,6 @@
 [submodule "plugin/vim/sourcerer.vim"]
 	path = plugin/vim/sourcerer.vim
 	url = https://github.com/xero/sourcerer.vim
+[submodule "plugin/zsh/oh-my-zsh"]
+	path = plugin/zsh/oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh
