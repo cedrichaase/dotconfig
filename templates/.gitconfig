@@ -1,0 +1,65 @@
+[user]
+	name = Cedric Haase
+	email = cedric@sineband.de
+
+[alias]
+  alias = !git config --get-regexp alias | sed 's/alias\\.\\([^ ]*\\) /\\1 := /'
+  autoadd = !git add -u && git status
+  br = branch -v
+  branches = branch -a --verbose
+  changes = diff --cached
+  ci = commit -v
+  co = checkout
+  dc = diff --cached
+  diffhead = diff HEAD^
+  ff = merge --ff-only
+  fork = checkout -b
+  graph = log --graph --decorate --oneline
+  history = log --pretty=format:'%ad (%an) %h: %s' --date=iso
+  incoming = !git inspect origin/HEAD ^HEAD
+  inspect = log --stat
+  map = !git graph --all
+  recent = log --oneline -n 10
+  recommit = !git ci --amend --reuse-message=HEAD
+  restore = reset --hard
+  softdiff = diff --ignore-space-changes
+  delete-merged = "!f() { git branch --merged | grep -v "\\*" | xargs -n 1 git branch -d; }; f"
+  show-merged = branch -a --merged
+  show-merged-local = branch -l --merged
+  show-merged-remote = branch -r --merged
+  show-unmerged = branch -a --no-merged
+  show-unmerged-local = branch -l --no-merged
+  show-unmerged-remote = branch -r --no-merged
+  st = status
+  unstage = reset HEAD
+  update = remote update --prune
+  remote-branches = "! f() { git for-each-ref --sort=committerdate --format='%(refname:short) * %(authorname) * %(committerdate:relative)' refs/remotes/ | column -t -s '*' | tac; }; f"
+  push-u = "!f() { BRANCH=$(git rev-parse --abbrev-ref HEAD); git push ${1-origin} -u $BRANCH; }; f"
+[core]
+  attributesfile = ~/.gitattributes
+  excludesfile = ~/.gitignore.global
+  fsyncobjectfiles = yes
+  whitespace = tab-in-indent
+
+[color]
+  ui = auto
+
+[clean]
+  requireForce = false
+
+[diff]
+  renamelimit = 0
+
+[merge]
+  tool = vimdiff
+
+[pack]
+  threads = 0
+
+[push]
+  default = tracking
+
+[receive]
+  denyCurrentBranch = warn
+
+# vim:set ft=gitconfig noet sw=8 ts=8:
