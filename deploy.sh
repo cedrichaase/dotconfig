@@ -25,9 +25,18 @@ function update()
 
 function build()
 {
+    # install dotgen deps if necessary
     [ ! -d ${DIR_DOTGEN}/vendor ] && cd ${DIR_DOTGEN} && composer install && cd ${DIR}
+
+    # create dir structure if necessary
     [ ! -d ${DIR_OUTPUT} ] && mkdir -p ${DIR_OUTPUT}
-    php ${DIR_DOTGEN}/src/generator.php ${DIR_CONFIGS}/$(hostname).ini
+
+    # find config file for current host
+    config_file=${DIR_CONFIGS}/$(hostname).ini
+    [ ! -f ${config_file} ] && echo "No config found for host $(hostname)" && exit 1
+
+    # render templates
+    php ${DIR_DOTGEN}/src/generator.php ${config_file}
 }
 
 function install()
