@@ -4,3 +4,6 @@
 [submodule "plugin/vim/rust.vim"]
 	path = plugin/vim/rust.vim
 	url = https://github.com/rust-lang/rust.vim.git
+[submodule "plugin/vim/sourcerer.vim"]
+	path = plugin/vim/sourcerer.vim
+	url = https://github.com/xero/sourcerer.vim
