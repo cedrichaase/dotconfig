@@ -1,3 +1,6 @@
 [submodule "dotgen"]
 	path = dotgen
 	url = git@github.com:cedrichaase/dotgen.git
+[submodule "plugin/vim/rust.vim"]
+	path = plugin/vim/rust.vim
+	url = https://github.com/rust-lang/rust.vim.git
