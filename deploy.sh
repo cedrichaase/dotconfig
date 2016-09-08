@@ -6,6 +6,7 @@ DIR_CONFIGS=${DIR}/configs
 DIR_OUTPUT=${DIR}/output
 
 DIR_PLUGINS=${DIR}/plugin
+DIR_PLUG_BASH=${DIR_PLUGINS}/bash
 DIR_PLUG_VIM=${DIR_PLUGINS}/vim
 DIR_PLUG_ZSH=${DIR_PLUGINS}/zsh
 
@@ -36,6 +37,9 @@ function install()
 
     # install dotfiles
     cp -rs ${DIR_OUTPUT}/* ${DIR_TARGET}
+
+    # install bash plugins
+    ln -s ${DIR_PLUG_BASH}/z/z.sh ${DIR_TARGET}/.z.sh
 
     # install zsh plugins
     cp -rs ${DIR_PLUG_ZSH}/oh-my-zsh ${DIR_TARGET}/.oh-my-zsh
