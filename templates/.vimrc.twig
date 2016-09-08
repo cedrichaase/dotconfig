@@ -1,8 +1,10 @@
+{% set sw=2 %}
+
 syntax enable
 set autoindent
 set smartindent
-set tabstop=2
-set shiftwidth=2
+set tabstop={{ sw }}
+set shiftwidth={{ sw }}
 set expandtab
 
 set noswapfile
@@ -19,9 +21,6 @@ highlight LengthError ctermfg=red guifg=red
 autocmd BufEnter * let space_error= matchadd('SpaceError',  '\( \+\t\)\|\(\s\+$\)', -1)
 autocmd BufEnter * let length_warn= matchadd('LengthWarn',  '\%81v.*', -1)
 autocmd BufEnter * let length_error=matchadd('LengthError', '\%121v.*', -1)
-
-autocmd BufRead *.vala,*.vapi set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
-au BufRead,BufNewFile *.vala,*.vapi setfiletype vala
 
 autocmd BufNewFile,BufRead *.mobile.erb let b:eruby_subtype='html'
 autocmd BufRead,BufNewFile *.mobile.erb set filetype=eruby.html
