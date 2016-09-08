@@ -5,8 +5,7 @@ DIR_DOTGEN=${DIR}/dotgen
 DIR_CONFIGS=${DIR}/configs
 DIR_OUTPUT=${DIR}/output
 
-#DIR_TARGET=${HOME}
-DIR_TARGET=./test
+DIR_TARGET=${HOME}
 
 function update()
 {
@@ -22,7 +21,9 @@ function build()
 
 function install()
 {
-    cp -rs ${DIR_OUTPUT}/* ${DIR_TARGET}/
+    shopt -s dotglob
+    cp -rs ${DIR_OUTPUT}/* ${DIR_TARGET}
+    shopt -u dotglob
 }
 
 function all()
