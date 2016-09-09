@@ -43,7 +43,7 @@ function build()
     [ ! -f ${config_file} ] && echo "No config found for host $(hostname)" && exit 1
 
     # render templates
-    php ${DIR_DOTGEN}/src/generator.php ${config_file}
+    ${DIR_DOTGEN}/bin/dotgen render -vvv ${config_file}
 }
 
 function install()
