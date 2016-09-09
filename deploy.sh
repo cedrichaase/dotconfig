@@ -23,6 +23,7 @@ function update()
     git stash
     git submodule update --remote
     git diff-index --quiet HEAD -- || {
+        cd ${DIR_DOTGEN} && composer install && cd ${DIR}
         git add .
         git commit -m "Update submodules"
     }
