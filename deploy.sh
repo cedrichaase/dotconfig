@@ -47,6 +47,15 @@ function build()
     ${DIR_DOTGEN}/bin/dotgen render -vv -t ${DIR_TEMPLATES} -o ${DIR_OUTPUT} ${config_file}
 }
 
+function watch()
+{
+    # recursively monitor templates and configs for changes
+    inotifywait -m -r -e modify,close_write ${DIR_TEMPLATES} ${DIR_CONFIGS} | while read file; do
+        echo ${file} changed, rebuilding
+        build
+    done
+}
+
 function install()
 {
     # don't ignore dotfiles
