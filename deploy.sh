@@ -3,6 +3,7 @@
 DIR=$(pwd)
 DIR_DOTGEN=${DIR}/dotgen
 DIR_CONFIGS=${DIR}/configs
+DIR_TEMPLATES=${DIR}/templates
 DIR_OUTPUT=${DIR}/output
 
 DIR_PLUGINS=${DIR}/plugin
@@ -43,7 +44,7 @@ function build()
     [ ! -f ${config_file} ] && echo "No config found for host $(hostname)" && exit 1
 
     # render templates
-    ${DIR_DOTGEN}/bin/dotgen render -vvv ${config_file}
+    ${DIR_DOTGEN}/bin/dotgen render -vv -t ${DIR_TEMPLATES} -o ${DIR_OUTPUT} ${config_file}
 }
 
 function install()
