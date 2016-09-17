@@ -1,3 +1,9 @@
+{# Take care of default parameters #}
+{##}
+{% if perl_ext_common is not defined %}
+{% set perl_ext_common = [] %}
+{% endif %}
+
 URxvt*.depth: 32
 URxvt*.background: rgba:0500/0500/0500/dddd
 ! URxvt*termName:                       string
@@ -37,7 +43,7 @@ URxvt*scrollBar:                        false
 ! URxvt*cursorBlink:                    boolean
 ! URxvt*pointerBlank:                   boolean
 ! URxvt*background:                     color
-URxvt*foreground: 			white
+URxvt*foreground:			                  white
 ! URxvt*color0:                         color
 ! URxvt*color1:                         color
 ! URxvt*color2:                         color
@@ -104,8 +110,14 @@ URxvt*font:                             xft:Fixed:pixelsize=14
 URxvt*secondaryScroll:			true
 ! URxvt*perl-lib:                       string
 ! URxvt*perl-eval:                      perl-eval
-! URxvt*perl-ext-common:                string	
+
+{% if perl_ext_common is defined %}
+URxvt*perl-ext-common:                  {{ perl_ext_common|join(',') }}
+{% endif %}
+
 ! URxvt*urlLauncher:			firefox
+! URxvt*url-launcher:                   string
+
 ! URxvt*perl-ext:                       string
 ! URxvt*iso14755:                       boolean
 ! URxvt*iso14755_52:                    boolean
@@ -116,11 +128,6 @@ URxvt*secondaryScroll:			true
 ! URxvt*background.interval:            seconds
 ! URxvt*bell-command:                   string
 ! URxvt*kuake.hotkey:                   string
-! URxvt*matcher.button:                 string
-! URxvt*matcher.launcher:               string
-! URxvt*matcher.launcher.*:             string
-! URxvt*matcher.pattern.*:              string
-! URxvt*matcher.rend.*:                 string
 ! URxvt*remote-clipboard.fetch:         string
 ! URxvt*remote-clipboard.store:         string
 ! URxvt*searchable-scrollback:          string
@@ -128,8 +135,15 @@ URxvt*secondaryScroll:			true
 ! URxvt*selection-pastebin.cmd:         string
 ! URxvt*selection-pastebin.url:         string
 ! URxvt*selection.pattern-0:            string
-! URxvt*tab-bg:                         colour
-! URxvt*tab-fg:                         colour
-! URxvt*tabbar-bg:                      colour
-! URxvt*tabbar-fg:                      colour
-! URxvt*url-launcher:                   string
+{% if perl_ext_common is defined and 'tabbed' in perl_ext_common %}
+URxvt*tab-fg:                           3
+URxvt*tab-bg:                           0
+URxvt*tabbar-fg:                        2
+URxvt*tabbar-bg:                        0
+{% endif %}
+
+! URxvt*matcher.button:                 string
+! URxvt*matcher.launcher:               string
+! URxvt*matcher.launcher.*:             string
+! URxvt*matcher.pattern.*:              string
+! URxvt*matcher.rend.*:                 string
