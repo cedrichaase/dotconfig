@@ -13,6 +13,10 @@ i3config:
   shortcut_wprotate: XF86Launch6
 
 
+i3status:
+  network_interface: enp5s0
+
+
 Xmodmap:
   map:
     191: Insert # remap F13

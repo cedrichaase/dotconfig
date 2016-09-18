@@ -8,3 +8,8 @@ i3config:
   backlight:
     - monitor: true
     - keyboard: true
+
+
+i3status:
+  network_type: ethernet
+  network_interface: eth0
