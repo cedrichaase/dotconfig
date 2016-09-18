@@ -53,7 +53,15 @@ function watch()
     inotifywait -m -r -e modify,close_write ${DIR_TEMPLATES} ${DIR_CONFIGS} | while read file; do
         echo ${file} changed, rebuilding
         build
+        reload
     done
+}
+
+function reload()
+{
+    export DISPLAY=:0.0
+    i3-msg restart
+    xrdb -merge ${HOME}/.Xresources
 }
 
 function install()
