@@ -1,0 +1,14 @@
+global:
+  __name: notebook
+  __extends: master
+
+
+i3config:
+  backlight:
+    - monitor: true
+    - keyboard: true
+
+
+i3status:
+  items:
+    - battery

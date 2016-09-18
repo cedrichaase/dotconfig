@@ -1,0 +1,10 @@
+global:
+  __abstract: true
+  __name: desktop
+  __extends: master
+
+
+i3config:
+  backlight:
+    - monitor: true
+    - keyboard: true

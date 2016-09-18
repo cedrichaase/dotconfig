@@ -1,0 +1,18 @@
+global:
+  __name: alukiste
+  __extends: desktop
+
+  include_comments: false
+
+
+i3config:
+  # applications
+  # N/A
+
+  # shortcuts
+  shortcut_wprotate: XF86Launch6
+
+
+Xmodmap:
+  map:
+    191: Insert # remap F13

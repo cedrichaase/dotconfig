@@ -1,0 +1,63 @@
+global:
+  __name: master
+
+
+i3config:
+  __templates:
+    - .i3/config
+    - .i3/autostart.sh
+
+  #applications
+  browser: firefox
+
+
+i3status:
+  __templates:
+    - .config/i3status/config
+    - .i3status.sh
+
+  # items to display in i3status
+  items:
+    - uptime
+    - network
+    - load
+    - time
+#    - disk
+#    - battery
+#    - dhcp
+#    - vpn
+#    - mpd
+
+
+vimrc:
+  __templates: [.vimrc]
+
+
+xinitrc:
+  __templates: [.xinitrc]
+
+
+Xmodmap:
+  __templates: [.Xmodmap]
+
+
+Xresources:
+  __templates: [.Xresources]
+
+  perl_ext_common:
+    - tabbed
+
+
+zshrc:
+  __templates: [.zshrc]
+
+  theme: wedisagree
+  plugins: [git]
+
+  disable_auto_update: true
+  disable_untracked_files_dirty: true
+
+
+gitconfig:
+  __templates: [.gitconfig]
+
