@@ -1,6 +1,10 @@
 global:
   __name: master
 
+  firstname: Cedric
+  lastname: Haase
+  email: cedric@sineband.de
+
 
 i3config:
   __templates:
@@ -142,4 +146,3 @@ zshrc:
 
 gitconfig:
   __templates: [.gitconfig]
-
