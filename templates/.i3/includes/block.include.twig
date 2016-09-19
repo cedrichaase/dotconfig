@@ -1,0 +1,25 @@
+{# include for i3 config blocks #}
+{% if depth is not defined %}
+{% set depth = 0 %}
+{% endif %}
+{##}
+{##}
+{% for i in 0..depth if depth > 0 %}    {% endfor %}{{ name }} {
+{% for key, value in content %}
+{##}
+{% if value is not iterable %}
+{% for i in 0..depth+1 %}    {% endfor %}{{ key }} {{ value }}
+{% endif -%}
+{##}
+{% if value is iterable %}
+
+{% include '.i3/includes/block.include.twig' with {
+'name': key,
+'content': value,
+'depth': depth+1
+} %}
+
+{% endif %}
+{##}
+{% endfor %}
+{% for i in 0..depth if depth > 0 %}    {% endfor %}}
