@@ -103,7 +103,7 @@ Xmodmap:
     60: [greater, period]
     61: [question, slash]
     62: [Shift_R]
-    63: [KP_Multiply, KP_Multiply]
+    63: [KP_Multiply, KP_Multiply] # keypad *
     64: [Meta_L, Alt_L]
     65: [space]
     66: [Control_L]
@@ -117,6 +117,8 @@ Xmodmap:
     74: [F8, F8]
     75: [F9, F9]
     76: [F10, F10]
+
+    108: [Multi_key] # Alt_R
 
     191: [XF86Tools] # F13
 

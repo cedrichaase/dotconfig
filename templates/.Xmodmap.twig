@@ -125,7 +125,6 @@ keycode 190 = Redo NoSymbol Redo NoSymbol Redo
 {% for keycode, symbols in map %}
 keycode {{ keycode }} = {{ symbols[1]|default("") }} {{ symbols[0] }} {{ symbols[1]|default("NoSymbol") }} {{ symbols[0] }} {{ symbols[1]|default("NoSymbol") }} {{ symbols[0] }}
 {% endfor %}
-keycode 191 = {{ key }} NoSymbol {{ key }} NoSymbol {{ key }}
 keycode 192 = XF86Launch5 NoSymbol XF86Launch5 NoSymbol XF86Launch5
 keycode 193 = XF86Launch6 NoSymbol XF86Launch6 NoSymbol XF86Launch6
 keycode 194 = XF86Launch7 NoSymbol XF86Launch7 NoSymbol XF86Launch7
