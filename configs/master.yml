@@ -43,6 +43,38 @@ xinitrc:
 Xmodmap:
   __templates: [.Xmodmap]
 
+  map:
+    9: [Escape]
+    10: [exclam,      1]
+    11: [at,          2]
+    12: [numbersign,  3]
+    13: [dollar,      4]
+    14: [percent,     5]
+    15: [asciicircum, 6]
+    16: [ampersand,   7]
+    17: [asterisk,    8]
+    18: [parenleft,   9]
+    19: [parenright,  0]
+    20: [minus, underscore]
+    21: [equal, plus]
+    22: [BackSpace, BackSpace]
+    23: [ISO_Left_Tab, Tab]
+    24: [Q, q]
+    25: [W, w]
+    26: [E, e]
+    27: [R, r]
+    28: [T, t]
+    29: [Y, y]
+    30: [U, u]
+    31: [I, i]
+    32: [O, o]
+    33: [P, p]
+    34: [braceleft, bracketleft]
+    35: [braceright, bracketright]
+    36: [Return]
+
+    191: [XF86Tools] # F13
+
 
 Xresources:
   __templates: [.Xresources]
