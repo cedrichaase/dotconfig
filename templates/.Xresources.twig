@@ -6,6 +6,7 @@
 
 URxvt*.depth: 32
 URxvt*.background: rgba:0500/0500/0500/dddd
+{#
 ! URxvt*termName:                       string
 ! URxvt*geometry:                       geometry
 ! URxvt*chdir:                          string
@@ -16,7 +17,9 @@ URxvt*.background: rgba:0500/0500/0500/dddd
 ! URxvt*skipScroll:                     boolean
 ! URxvt*pastableTabs:                   boolean
 ! URxvt*scrollstyle:                    mode
+#}
 URxvt*scrollBar:                        false
+{#
 ! URxvt*scrollBar_right:                boolean
 ! URxvt*scrollBar_floating:             boolean
 ! URxvt*scrollBar_align:                mode
@@ -43,7 +46,9 @@ URxvt*scrollBar:                        false
 ! URxvt*cursorBlink:                    boolean
 ! URxvt*pointerBlank:                   boolean
 ! URxvt*background:                     color
+#}
 URxvt*foreground:			                  white
+{#
 ! URxvt*color0:                         color
 ! URxvt*color1:                         color
 ! URxvt*color2:                         color
@@ -75,7 +80,9 @@ URxvt*foreground:			                  white
 ! URxvt*pointerColor2:                  color
 ! URxvt*borderColor:                    color
 ! URxvt*iconFile:                       file
+#}
 URxvt*font:                             xft:Fixed:pixelsize=14
+{#
 ! URxvt*boldFont:                       fontname
 ! URxvt*italicFont:                     fontname
 ! URxvt*boldItalicFont:                 fontname
@@ -107,14 +114,18 @@ URxvt*font:                             xft:Fixed:pixelsize=14
 ! URxvt*cutchars:                       string
 ! URxvt*answerbackString:               string
 ! URxvt*secondaryScreen:                boolean
+#}
 URxvt*secondaryScroll:			true
+{#
 ! URxvt*perl-lib:                       string
 ! URxvt*perl-eval:                      perl-eval
+#}
 
 {% if perl_ext_common is defined %}
 URxvt*perl-ext-common:                  {{ perl_ext_common|join(',') }}
 {% endif %}
 
+{#
 ! URxvt*urlLauncher:			firefox
 ! URxvt*url-launcher:                   string
 
@@ -135,15 +146,17 @@ URxvt*perl-ext-common:                  {{ perl_ext_common|join(',') }}
 ! URxvt*selection-pastebin.cmd:         string
 ! URxvt*selection-pastebin.url:         string
 ! URxvt*selection.pattern-0:            string
+#}
 {% if perl_ext_common is defined and 'tabbed' in perl_ext_common %}
 URxvt*tab-fg:                           3
 URxvt*tab-bg:                           0
 URxvt*tabbar-fg:                        2
 URxvt*tabbar-bg:                        0
 {% endif %}
-
+{#
 ! URxvt*matcher.button:                 string
 ! URxvt*matcher.launcher:               string
 ! URxvt*matcher.launcher.*:             string
 ! URxvt*matcher.pattern.*:              string
 ! URxvt*matcher.rend.*:                 string
+#}
