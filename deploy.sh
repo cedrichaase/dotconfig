@@ -62,6 +62,7 @@ function reload()
     export DISPLAY=:0.0
     i3-msg restart
     xrdb -merge ${HOME}/.Xresources
+    xmodmap ${HOME}/.Xmodmap
 }
 
 function install()
