@@ -23,6 +23,60 @@ i3config:
     colors:
       background: '#000000'
       statusline: '#FFFFAA'
+      focused_workspace:
+        border: '#AACC33'
+        background: '#88AA11'
+        text: '#ffffff'
+      active_workspace:
+        border: '#333333'
+        background: '#5f676a'
+        text: '#ffffff'
+      inactive_workspace:
+        border: '#333333'
+        background: '#222222'
+        text: '#888888'
+      urgent_workspace:
+        border: '#2f343a'
+        background: '#900000'
+        text: '#ffffff'
+      binding_mode:
+        border: '#2f343a'
+        background: '#900000'
+        text: '#ffffff'
+
+  colors:
+    client.focused:
+      border: '#AACC33'
+      background: '#222222'
+      text: '#AACC66'
+      indicator: '#000000'
+      child_border: '#222222'
+    client.focused_inactive:
+      border: '#446644'
+      background: '#222222'
+      text: '#779966'
+      indicator: '#000000'
+      child_border: '#222222'
+    client.unfocused:
+      border: '#AACCBB'
+      background: '#222222'
+      text: '#666666'
+      indicator: '#000000'
+      child_border: '#222222'
+    client.urgent:
+      border:
+      background:
+      text:
+      indicator:
+      child_border:
+    client.placeholder:
+      border:
+      background:
+      text:
+      indicator:
+      child_border:
+    client.background:
+      border: '#000000'
 
 i3status:
   __templates:
