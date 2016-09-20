@@ -16,3 +16,6 @@
 [submodule "plugin/bash/z"]
 	path = plugin/bash/z
 	url = https://github.com/rupa/z.git
+[submodule "plugin/vim/vim-twig"]
+	path = plugin/vim/vim-twig
+	url = https://github.com/lumiliet/vim-twig.git
