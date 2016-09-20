@@ -1,0 +1,5 @@
+global:
+  __name: orange
+
+theme:
+  __templates: [orange.yml]

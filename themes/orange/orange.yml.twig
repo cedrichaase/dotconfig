@@ -1,0 +1,64 @@
+{% set base_color = 'CC9900' %}
+
+global:
+  __name: orange
+
+i3config:
+  bar:
+    colors:
+      background: '#000000'
+      statusline: '#CCAA22'
+      focused_workspace:
+        border: '#{{ base_color|lighten }}'
+        background: '#{{ base_color }}'
+        text: '#ffffff'
+      active_workspace:
+        border: '#333333'
+        background: '#5f676a'
+        text: '#ffffff'
+      inactive_workspace:
+        border: '#333333'
+        background: '#222222'
+        text: '#888888'
+      urgent_workspace:
+        border: '#2f343a'
+        background: '#900000'
+        text: '#ffffff'
+      binding_mode:
+        border: '#2f343a'
+        background: '#900000'
+        text: '#ffffff'
+
+  colors:
+    client.focused:
+      border: '#EEAA11'
+      background: '#222222'
+      text: '#CCBB11'
+      indicator: '#000000'
+      child_border: '#222222'
+    client.focused_inactive:
+      border: '#996600'
+      background: '#222222'
+      text: '#AA9911'
+      indicator: '#000000'
+      child_border: '#222222'
+    client.unfocused:
+      border: '#333333'
+      background: '#222222'
+      text: '#666666'
+      indicator: '#000000'
+      child_border: '#222222'
+    client.urgent:
+      border:
+      background:
+      text:
+      indicator:
+      child_border:
+    client.placeholder:
+      border:
+      background:
+      text:
+      indicator:
+      child_border:
+    client.background:
+      border: '#000000'
