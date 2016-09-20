@@ -1,0 +1,6 @@
+global:
+  __name: neon
+
+theme:
+  __templates: [neon.yml]
+  name: neon
