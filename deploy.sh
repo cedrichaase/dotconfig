@@ -92,10 +92,11 @@ function install()
     dir_vim_colors=${DIR_TARGET}/.vim/colors
     [ ! -d  ${dir_vim_colors} ] && mkdir -p ${dir_vim_colors}
 
-    cp -rs ${DIR_PLUG_VIM}/vim-pathogen/autoload/* ${dir_vim_autoload}/
-    cp -rs ${DIR_PLUG_VIM}/rust.vim ${dir_vim_bundle}/
-    cp -rs ${DIR_PLUG_VIM}/sourcerer.vim ${dir_vim_bundle}/
-    ln -s ${DIR_PLUG_VIM}/sourcerer.vim/colors/sourcerer.vim ${dir_vim_colors}/
+    cp -rsf ${DIR_PLUG_VIM}/vim-pathogen/autoload/* ${dir_vim_autoload}/
+    cp -rsf ${DIR_PLUG_VIM}/rust.vim ${dir_vim_bundle}/
+    cp -rsf ${DIR_PLUG_VIM}/sourcerer.vim ${dir_vim_bundle}/
+    cp -rsf ${DIR_PLUG_VIM}/vim-twig ${dir_vim_bundle}/
+    ln -sf ${DIR_PLUG_VIM}/sourcerer.vim/colors/sourcerer.vim ${dir_vim_colors}/
 
     # ignore dotfiles again
     shopt -u dotglob
