@@ -3,9 +3,22 @@
 {% set depth = 0 %}
 {% endif %}
 
+{% set black = '#000000' %}
+
 {%- for i in 0..depth if depth > 0 %}    {% endfor %}{{ name }} {
 {% for key, value in content %}
-    {%- if value is not iterable %}
+    {%- if name == 'colors' and value is iterable -%}
+        {% include '.i3/includes/colors.include.twig' with {
+            'colorclass': key,
+            'border': value.border|default(black),
+            'background': value.background|default(black),
+            'text': value.text|default(black),
+            'indicator': value.indicator|default(black),
+            'child_border': value.child_border|default(black),
+            'offset': depth+1,
+            'trim_whitespace': true
+        } -%}
+    {%- elseif value is not iterable -%}
         {%- for i in 0..depth+1 %}    {% endfor %}{{ key }} {{ value }}
     {%- elseif value is iterable -%}
         {%- include '.i3/includes/block.include.twig' with {

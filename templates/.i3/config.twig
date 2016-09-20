@@ -154,7 +154,20 @@ bindsym $mod+r mode "resize"
 {% endif %}
 
 {# disable window decorations #}
-new_window none
-new_float normal
+{#new_window none#}
+{#new_float normal#}
+
+{# colors #}
+{% for name, class in colors %}
+{% set black = '#000000' %}
+{% include '.i3/includes/colors.include.twig' with {
+    'colorclass': name,
+    'border': class.border|default(black),
+    'background': class.background|default(black),
+    'text': class.text|default(black),
+    'indicator': class.indicator|default(black),
+    'child_border': class.child_border|default(black)
+} %}
+{% endfor %}
 
 exec_always ~/.i3/autostart.sh
