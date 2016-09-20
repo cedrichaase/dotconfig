@@ -44,7 +44,7 @@ function build()
     [ ! -f ${config_file} ] && echo "No config found for host $(hostname)" && exit 1
 
     # render templates
-    ${DIR_DOTGEN}/bin/dotgen render -vv -I${DIR_CONFIGS} -I${DIR_CONFIGS}/type -t ${DIR_TEMPLATES} -o ${DIR_OUTPUT} ${config_file}
+    ${DIR_DOTGEN}/bin/dotgen render -vv -I${DIR_CONFIGS} -I${DIR_CONFIGS}/type -I${DIR_CONFIGS}/themes -t ${DIR_TEMPLATES} -o ${DIR_OUTPUT} ${config_file}
 }
 
 function watch()
