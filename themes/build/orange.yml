@@ -1,0 +1,63 @@
+
+global:
+  __name: orange
+
+i3config:
+  bar:
+    colors:
+      background: '#000000'
+      statusline: '#cfdbfd'
+      focused_workspace:
+        border: '#ffbf00'
+        background: '#CC9900'
+        text: '#ffffff'
+      active_workspace:
+        border: '#333333'
+        background: '#5f676a'
+        text: '#ffffff'
+      inactive_workspace:
+        border: '#333333'
+        background: '#222222'
+        text: '#888888'
+      urgent_workspace:
+        border: '#2f343a'
+        background: '#900000'
+        text: '#ffffff'
+      binding_mode:
+        border: '#2f343a'
+        background: '#900000'
+        text: '#ffffff'
+
+  colors:
+    client.focused:
+      border: '#CC9900'
+      background: '#222222'
+      text: '#CC9900'
+      indicator: '#000000'
+      child_border: '#222222'
+    client.focused_inactive:
+      border: '#736026'
+      background: '#222222'
+      text: '#60563a'
+      indicator: '#000000'
+      child_border: '#222222'
+    client.unfocused:
+      border: '#333333'
+      background: '#222222'
+      text: '#666666'
+      indicator: '#000000'
+      child_border: '#222222'
+    client.urgent:
+      border:
+      background:
+      text:
+      indicator:
+      child_border:
+    client.placeholder:
+      border:
+      background:
+      text:
+      indicator:
+      child_border:
+    client.background:
+      border: '#000000'
