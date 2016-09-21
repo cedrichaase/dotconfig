@@ -11,6 +11,9 @@ DIR_PLUG_BASH=${DIR_PLUGINS}/bash
 DIR_PLUG_VIM=${DIR_PLUGINS}/vim
 DIR_PLUG_ZSH=${DIR_PLUGINS}/zsh
 
+DIR_THEMES_IN=${DIR}/themes/meta
+DIR_THEMES_OUT=${DIR}/themes/build
+
 DIR_TARGET=${HOME}
 
 function init()
@@ -43,17 +46,24 @@ function build()
     local config_file=${DIR_CONFIGS}/host/$(hostname).yml
     [ ! -f ${config_file} ] && echo "No config found for host $(hostname)" && exit 1
 
+    # render themes
+    for theme in $(ls ${DIR_THEMES_IN}/*/theme.yml); do
+      echo dirname ${theme}
+      ${DIR_DOTGEN}/bin/dotgen render -vv -t $(dirname ${theme}) -o ${DIR_THEMES_OUT} ${theme}
+    done
+
     # render templates
-    ${DIR_DOTGEN}/bin/dotgen render -vv -I${DIR_CONFIGS} -I${DIR_CONFIGS}/type -I${DIR_CONFIGS}/themes -t ${DIR_TEMPLATES} -o ${DIR_OUTPUT} ${config_file}
+    ${DIR_DOTGEN}/bin/dotgen render -vv -I${DIR_CONFIGS} -I${DIR_CONFIGS}/type -I${DIR_THEMES_OUT} -t ${DIR_TEMPLATES} -o ${DIR_OUTPUT} ${config_file}
 }
 
 function watch()
 {
     # recursively monitor templates and configs for changes
-    inotifywait -m -r -e modify,close_write ${DIR_TEMPLATES} ${DIR_CONFIGS} | while read file; do
+    inotifywait -m -r -e modify,close_write ${DIR_TEMPLATES} ${DIR_CONFIGS} ${DIR_THEMES_IN} | while read file; do
         echo ${file} changed, rebuilding
         build
         reload
+        sleep 1
     done
 }
 
