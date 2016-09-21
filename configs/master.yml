@@ -1,6 +1,6 @@
 global:
   __name: master
-  __extends: orange
+  __extends: neon
 
   firstname: Cedric
   lastname: Haase
