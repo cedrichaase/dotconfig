@@ -1,4 +1,7 @@
 
+
+                                                                          
+
 global:
   __name: neon
 
@@ -6,10 +9,10 @@ i3config:
   bar:
     colors:
       background: '#000000'
-      statusline: '#dff1ef'
+      statusline: '#93a8a0'
       focused_workspace:
-        border: '#bb4955'
-        background: '#983943'
+        border: '#c6a7b3'
+        background: '#b28898'
         text: '#ffffff'
       active_workspace:
         border: '#333333'
@@ -17,7 +20,7 @@ i3config:
         text: '#ffffff'
       inactive_workspace:
         border: '#333333'
-        background: '#222222'
+        background: '#191919'
         text: '#888888'
       urgent_workspace:
         border: '#2f343a'
@@ -30,23 +33,23 @@ i3config:
 
   colors:
     client.focused:
-      border: '#983943'
-      background: '#222222'
-      text: '#983943'
+      border: '#b28898'
+      background: '#191919'
+      text: '#b28898'
       indicator: '#000000'
-      child_border: '#222222'
+      child_border: '#191919'
     client.focused_inactive:
-      border: '#613d41'
-      background: '#222222'
-      text: '#584648'
+      border: '#917781'
+      background: '#191919'
+      text: '#8a7d82'
       indicator: '#000000'
-      child_border: '#222222'
+      child_border: '#191919'
     client.unfocused:
       border: '#333333'
-      background: '#222222'
+      background: '#191919'
       text: '#666666'
       indicator: '#000000'
-      child_border: '#222222'
+      child_border: '#191919'
     client.urgent:
       border:
       background:

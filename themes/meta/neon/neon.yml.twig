@@ -1,10 +1,16 @@
-{% set base_color = randomColor() %}
 
-{% if base_color|isLight %}
-  {% set bgcolor_base = base_color|darken(80)|desaturate(80) %}
-{% else %}
-  {% set bgcolor_base = base_color|lighten(80)|desaturate(80) %}
-{% endif %}
+{% set base_color = '00FF00' %}
+
+{# hack: get a random light color #}
+{% for i in 0..10 %}
+  {% set color = randomColor() %}
+  {% if color|isLight %}
+    {% set base_color = color %}
+  {% endif %}
+{% endfor %}
+
+{% set bgcolor_base = base_color|darken(70)|desaturate(99) %}
+{% set darkgrey = bgcolor_base|lighten(10)|desaturate(100) %}
 
 global:
   __name: {{ name }}
@@ -12,19 +18,19 @@ global:
 i3config:
   bar:
     colors:
-      background: '#000000'
-      statusline: '#{{ base_color|desaturate|lighten(50)|complementary }}'
+      background: '#{{ bgcolor_base|desaturate(100) }}'
+      statusline: '#{{ base_color|desaturate(50)|complementary }}'
       focused_workspace:
         border: '#{{ base_color|lighten }}'
         background: '#{{ base_color }}'
-        text: '#ffffff'
+        text: '#{{ base_color|desaturate(50)|complementary|lighten(80) }}'
       active_workspace:
-        border: '#333333'
+        border: '#{{ bgcolor_base|lighten(20) }}'
         background: '#5f676a'
         text: '#ffffff'
       inactive_workspace:
-        border: '#333333'
-        background: '#222222'
+        border: '#{{ bgcolor_base|lighten(20)|desaturate(100) }}'
+        background: '#{{ darkgrey }}'
         text: '#888888'
       urgent_workspace:
         border: '#2f343a'
@@ -38,22 +44,22 @@ i3config:
   colors:
     client.focused:
       border: '#{{ base_color }}'
-      background: '#222222'
+      background: '#{{ darkgrey }}'
       text: '#{{ base_color }}'
       indicator: '#000000'
-      child_border: '#222222'
+      child_border: '#{{ darkgrey }}'
     client.focused_inactive:
       border: '#{{ base_color|desaturate(50)|darken }}'
-      background: '#222222'
+      background: '#{{ darkgrey }}'
       text: '#{{ base_color|desaturate(75)|darken }}'
       indicator: '#000000'
-      child_border: '#222222'
+      child_border: '#{{ darkgrey }}'
     client.unfocused:
-      border: '#333333'
-      background: '#222222'
+      border: '#{{ bgcolor_base|lighten(20) }}'
+      background: '#{{ darkgrey }}'
       text: '#666666'
       indicator: '#000000'
-      child_border: '#222222'
+      child_border: '#{{ darkgrey }}'
     client.urgent:
       border:
       background:

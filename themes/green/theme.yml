@@ -1,5 +1,0 @@
-global:
-  __name: green
-
-theme:
-  __templates: [green.yml]
