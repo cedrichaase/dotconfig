@@ -64,7 +64,7 @@ Xmodmap:
     18: [parenleft,   9]
     19: [parenright,  0]
     20: [underscore, minus]
-    21: [equal, plus]
+    21: [plus, equal]
     22: [BackSpace, BackSpace]
     23: [ISO_Left_Tab, Tab]
     24: [Q, q]
