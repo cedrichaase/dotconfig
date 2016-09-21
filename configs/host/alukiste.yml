@@ -10,6 +10,7 @@ i3config:
   # N/A
 
   # shortcuts
+  shortcut_randomize_theme: XF86Launch5
   shortcut_wprotate: XF86Launch6
 
 
